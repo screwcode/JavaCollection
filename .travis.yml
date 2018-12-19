@@ -1,4 +1,4 @@
 language: java
 jdk:
   - oraclejdk8
-script: javac src/com/screwcode/*.java && java -cp src com.screwcode.CharCountTest
+script: javac src/com/screwcode/*.java && java -cp src com.screwcode.PersonTest

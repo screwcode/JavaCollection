@@ -1,0 +1,4 @@
+language: java
+jdk:
+  - oraclejdk8
+script: javac com/screwcode/*.java && java com.screwcode.CommonElementsInIntegerListTest

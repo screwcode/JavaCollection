@@ -1,5 +1,3 @@
-package com.screwcode;
-
 import java.util.*;
 
 public class CommonElementsInObjectList {

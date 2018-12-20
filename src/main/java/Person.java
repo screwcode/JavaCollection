@@ -1,5 +1,3 @@
-package com.screwcode;
-
 public class Person {
     /**
      * 身份证号

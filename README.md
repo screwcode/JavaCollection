@@ -6,6 +6,8 @@
 
 ScrewCode的名字来源于“面试造火箭，入职拧螺丝”。与其他侧重算法的在线学习平台不同的是，ScrewCode更侧重于提供最真实的工程场景——一旦你能解决ScrewCode中的问题，你就能轻松解决真实工作中的挑战。ScrewCode利用Travis CI实现了自动判题系统，你可以通过提交Pull Request的方式做题并获得答案是否正确的反馈。你可以通过ScrewCode来学习Git和Github的相关流程，同时，提交Pull Request还能为你的首页点亮小绿点。
 
+这是与[饥人谷](https://xiedaimala.com)合作的视频课程的配套习题，你可以在[这里](https://xiedaimala.com/courses/67ce674c-180e-4ae3-a799-19a22c0f8908)获得视频教学。
+
 ## 本仓库是什么
 
 本仓库提供与Java Collection相关的工程代码习题，每个习题放在一个分支上，习题列表如下：

@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
+// Unused comment
+
 public class CharCount {
     /**
      * 保存字符到其出现次数的映射。例如，aabbc这个字符串中，这个Map的值就是

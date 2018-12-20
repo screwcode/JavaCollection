@@ -1,5 +1,3 @@
-package com.screwcode;
-
 public class Person {
     private final Integer id;
 

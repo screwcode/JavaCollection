@@ -1,6 +1,4 @@
-package com.screwcode;
-
-import java.util.*;
+import java.util.HashSet;
 
 public class RemoveDuplicateCharsInString {
     // 修改这个方法使得它能够输出正确结果：

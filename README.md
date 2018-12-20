@@ -6,5 +6,5 @@
 
 我们希望`RemoveDuplicateCharsInString.removeDuplicateCharsInString`能够去掉字符串中的重复字符并将结果输出。现在不知为何输出的结果和我们的预期不符合。
 
-请修改`src/com/screwcode/RemoveDuplicateCharsInString.java`的实现，使得测试通过（`src/com/screwcode/RemoveDuplicateCharsInStringTest.main()`没有异常产生），然后提交Pull Request。
+请修改`src/main/java/RemoveDuplicateCharsInString.java`的实现，使得测试通过（`mvn test`），然后提交Pull Request。
 切记，Pull Request的base分支一定要选择`RemoveDuplicateCharsInString`！

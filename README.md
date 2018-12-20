@@ -6,5 +6,5 @@
 
 小明写了一个类，但是测试没有通过。
 
-请修复`src/com/screwcode/Point.java`中的bug，使得测试通过（`src/com/screwcode/PointTest.main()`没有异常产生）然后提交Pull Request。
+请修复`src/main/java/Point.java`中的bug，使得测试通过（`mvn test`），然后提交Pull Request。
 切记，Pull Request的base分支一定要选择`FixCompareBug`！

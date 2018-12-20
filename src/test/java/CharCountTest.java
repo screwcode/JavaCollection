@@ -1,14 +1,16 @@
-package com.screwcode;
+import org.junit.Test;
 
-import java.util.Objects;
+import static org.junit.Assert.assertEquals;
 
 public class CharCountTest {
-    public static void main(String[] args) {
+    @Test
+    public void test() {
         CharCount charCount1 = new CharCount("aabbcc");
         CharCount charCount2 = new CharCount("bcd");
 
         assertEquals(2, charCount1.count('a'));
         assertEquals(0, charCount1.count('z'));
+
         // 有两个公共字符：b和c
         assertEquals(2, charCount1.howManyCharsInCommon(charCount2));
 
@@ -21,11 +23,5 @@ public class CharCountTest {
 
         assertEquals(3, charCount1.chars().size());
         assertEquals(3, charCount2.chars().size());
-    }
-
-    private static void assertEquals(Object expected, Object actual) {
-        if (!Objects.equals(expected, actual)) {
-            throw new IllegalStateException("Expected " + expected + " but get " + actual);
-        }
     }
 }

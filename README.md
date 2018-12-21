@@ -8,3 +8,5 @@
 
 请修复`src/main/java/Person.java`中的bug，使得测试通过（`mvn test`）然后提交Pull Request。
 切记，Pull Request的base分支一定要选择`FixEqualsHashCodeNPE`！
+
+![1](https://raw.githubusercontent.com/screwcode/SumOfTwoIntegers/master/images/compare-pr.png)

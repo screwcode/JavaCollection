@@ -24,3 +24,5 @@ ScrewCode的名字来源于“面试造火箭，入职拧螺丝”。与其他�
 - [TBD][修复Bug: 多线程下的死锁问题](https://github.com/screwcode/JavaCollection/tree/FixMultithreadDeadlock) `Hard` 
 
 ## 如何开始
+
+如果你没有Git和GitHub的经验，那么不妨先试试我们的[入门指南](https://github.com/screwcode/SumOfTwoIntegers#%E5%A6%82%E4%BD%95%E5%BC%80%E5%A7%8B)。

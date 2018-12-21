@@ -8,3 +8,5 @@
 
 请修改`src/main/java/RemoveDuplicateCharsInString.java`的实现，使得测试通过（`mvn test`），然后提交Pull Request。
 切记，Pull Request的base分支一定要选择`RemoveDuplicateCharsInString`！
+
+![1](https://raw.githubusercontent.com/screwcode/SumOfTwoIntegers/master/images/compare-pr.png)

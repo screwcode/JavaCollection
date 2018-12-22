@@ -20,7 +20,7 @@ ScrewCode的名字来源于“面试造火箭，入职拧螺丝”。与其他�
 - [修复Bug: 错误的equals实现](https://github.com/screwcode/JavaCollection/tree/FixEqualsBug) `Medium` 
 - [修复Bug: 错误的hashCode实现](https://github.com/screwcode/JavaCollection/tree/FixHashCodeBug) `Hard` 
 - [修复Bug: 错误的compare实现](https://github.com/screwcode/JavaCollection/tree/FixCompareBug) `Medium` 
-- [TBD][修复Bug: 错误的Comparable实现](https://github.com/screwcode/JavaCollection/tree/FixComparableBug) `Hard` 
+- [修复Bug: 错误的Comparable实现](https://github.com/screwcode/JavaCollection/tree/FixComparableBug) `Easy` 
 - [TBD][修复Bug: 多线程下的死锁问题](https://github.com/screwcode/JavaCollection/tree/FixMultithreadDeadlock) `Hard` 
 
 ## 如何开始

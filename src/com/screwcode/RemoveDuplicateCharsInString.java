@@ -7,13 +7,15 @@ public class RemoveDuplicateCharsInString {
     // 例如，输入aabbcc返回abc
     // 输入ccbbaa返回cba
     public static String removeDuplicateCharsInString(String s) {
-        HashSet<Character> charSet = new HashSet<>();
+        TreeSet<Character> charSet = new TreeSet<>();
         for (int i = 0; i < s.length(); i++) {
             charSet.add(s.charAt(i));
         }
 
         String result = "";
-        for (Character ch : charSet) {
+        Iterator iterator = charSet.descendingIterator();
+        while (iterator.hasNext()) {
+            Character ch = (Character) iterator.next();
             result += ch;
         }
 

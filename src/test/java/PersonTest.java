@@ -25,5 +25,7 @@ public class PersonTest {
         assertTrue(set.contains(person));
         person.setName("张三");
         assertTrue(set.contains(person));
+        person.setAge(99);
+        assertTrue(set.contains(person));
     }
 }

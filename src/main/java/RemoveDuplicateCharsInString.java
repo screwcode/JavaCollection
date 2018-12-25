@@ -7,15 +7,14 @@ public class RemoveDuplicateCharsInString {
     // 输入apple返回aple
     public static String removeDuplicateCharsInString(String s) {
         HashSet<Character> charSet = new HashSet<>();
-        for (int i = 0; i < s.length(); i++) {
-            charSet.add(s.charAt(i));
-        }
-
         String result = "";
-        for (Character ch : charSet) {
-            result += ch;
+        for (int i = 0; i < s.length(); i++) {
+            Character ch = s.charAt(i);
+            if (!charSet.contains(ch)) {
+                result += ch;
+                charSet.add(ch);
+            }
         }
-
         return result;
     }
 }

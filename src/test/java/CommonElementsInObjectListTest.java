@@ -11,30 +11,30 @@ import static org.junit.Assert.assertNotEquals;
 public class CommonElementsInObjectListTest {
     @Test
     public void test() {
-        Person alice = new Person("Alice");
-        Person bob = new Person("Bob");
-        Person carol = new Person("Carol");
-        Person anotherAlice = new Person("Alice");
+        Person zxy = new Person("张学友");
+        Person ldh = new Person("刘德华");
+        Person lm = new Person("黎明");
+        Person zxy2 = new Person("张学友");
 
-        assertEquals("Alice is equal to Alice itself", alice, alice);
-        assertNotEquals("Alice is not equal to Bob", alice, bob);
-        assertEquals("Alice is equal to another Alice", alice, anotherAlice);
+        assertEquals("张学友 == 张学友", zxy, zxy);
+        assertNotEquals("张学友 != 刘德华", zxy, ldh);
+        assertEquals("张学友 == 另一个张学友", zxy, zxy2);
 
-        assertEquals("No common elements in set [Alice] and set [Bob]",
-                CommonElementsInObjectList.commonElementsIn(Arrays.asList(alice), Arrays.asList(bob)),
+        assertEquals("set [张学友] 和 set [刘德华] 没有相同元素",
+                CommonElementsInObjectList.commonElementsIn(Arrays.asList(zxy), Arrays.asList(ldh)),
                 setOf());
 
-        assertEquals("Common elements of set [Alice,Bob] and set [Bob,Carol] are [Bob]",
-                CommonElementsInObjectList.commonElementsIn(Arrays.asList(alice, bob), Arrays.asList(bob, carol)),
-                setOf(bob));
+        assertEquals("set [张学友,刘德华] 和 set [刘德华,黎明] 的相同元素们是 [刘德华]",
+                CommonElementsInObjectList.commonElementsIn(Arrays.asList(zxy, ldh), Arrays.asList(ldh, lm)),
+                setOf(ldh));
 
-        assertEquals("Common elements of set [Alice,Alice] and set [Alice,Alice] are [Alice]",
-                CommonElementsInObjectList.commonElementsIn(Arrays.asList(alice, anotherAlice), Arrays.asList(alice, anotherAlice)),
-                alice);
+        assertEquals("set [张学友,张学友2] 和 set [张学友,张学友2] 的相同元素们是 [张学友]",
+                CommonElementsInObjectList.commonElementsIn(Arrays.asList(zxy, zxy2), Arrays.asList(zxy, zxy2)),
+                setOf(zxy));
 
-        assertEquals("Common elements of set [Alice,Alice] and set [Alice,Alice] are [Alice]",
-                CommonElementsInObjectList.commonElementsIn(Arrays.asList(alice, anotherAlice), Arrays.asList(alice, anotherAlice)),
-                anotherAlice);
+        assertEquals("set [张学友,张学友2] 和 set [张学友,张学友2] 的相同元素们是 [张学友2]",
+                CommonElementsInObjectList.commonElementsIn(Arrays.asList(zxy, zxy2), Arrays.asList(zxy, zxy2)),
+                setOf(zxy2));
     }
 
     private Set<Person> setOf(Person... persons) {

@@ -14,11 +14,12 @@ ScrewCode的名字来源于“面试造火箭，入职拧螺丝”。与其他�
 
 - [求两个整数List的公共元素](https://github.com/screwcode/JavaCollection/tree/CommonElementsInIntegerList) `Easy` 
 - [求两个对象List的公共元素](https://github.com/screwcode/JavaCollection/tree/CommonElementsInObjectList) `Easy` 
-- [修复Bug: 字符串字符去重](https://github.com/screwcode/JavaCollection/tree/RemoveDuplicateCharsInString) `Easy` 
-- [修复Bug: HashMap数据丢失](https://github.com/screwcode/JavaCollection/tree/MissingDataInHashMap) `Hard` 
 - [修复Bug: equals/hashCode抛出的NullPointerException](https://github.com/screwcode/JavaCollection/tree/FixEqualsHashCodeNPE) `Medium` 
 - [修复Bug: 错误的equals实现](https://github.com/screwcode/JavaCollection/tree/FixEqualsBug) `Medium` 
 - [修复Bug: 错误的hashCode实现](https://github.com/screwcode/JavaCollection/tree/FixHashCodeBug) `Hard` 
+- [修复Bug: 字符串字符去重](https://github.com/screwcode/JavaCollection/tree/RemoveDuplicateCharsInString) `Easy` 
+- [修复Bug: HashMap数据丢失](https://github.com/screwcode/JavaCollection/tree/MissingDataInHashMap) `Hard` 
+- [按照多个字段进行排序](https://github.com/screwcode/JavaCollection/tree/SortByMultipleFields) `Easy` 
 - [修复Bug: 错误的compare实现](https://github.com/screwcode/JavaCollection/tree/FixCompareBug) `Medium` 
 - [修复Bug: 错误的Comparable实现](https://github.com/screwcode/JavaCollection/tree/FixComparableBug) `Easy` 
 - [TBD][修复Bug: 多线程下的死锁问题](https://github.com/screwcode/JavaCollection/tree/FixMultithreadDeadlock) `Hard` 

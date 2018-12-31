@@ -18,9 +18,9 @@ public class PointTest {
 
         points = Arrays.asList(new Point(1234567890, -1234567890), new Point(-1234567890, 1234567890));
 
-        // WTF?
-        assertEquals(Arrays.asList("We can sort more points\n",
-                new Point(-1234567890, 1234567890), new Point(1234567890, -1234567890)),
+        // 什么鬼？
+        assertEquals("We can sort more points\n",
+                Arrays.asList(new Point(-1234567890, 1234567890), new Point(1234567890, -1234567890)),
                 Point.sort(points));
     }
 }

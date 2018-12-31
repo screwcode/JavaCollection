@@ -16,7 +16,7 @@ public class Person {
 
         Person person = (Person) o;
 
-        return id != null && id.equals(person.id);
+        return id == person.id;
     }
 
     @Override

@@ -1,33 +1,37 @@
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class ConcurrentSetTest {
-    private ConcurrentHashSet concurrentHashSet = new ConcurrentHashSet();
+    private ConcurrentTreeSet concurrentTreeSet = new ConcurrentTreeSet();
+    // 计数器，作用是生成不重复的整数
+    private AtomicInteger counter = new AtomicInteger(0);
 
     @Test
     public void canAddWithSingleThread() {
-        add100DifferentObjects();
-        assertEquals(100, concurrentHashSet.size(), "添加100个元素之后，结果集的大小是100");
+        add100DifferentNumbers();
+
+        assertEquals(100, concurrentTreeSet.size(), "添加100个元素之后，结果集的大小是100");
     }
 
     @RepeatedTest(10) // 重复10次以保证结果的正确性
     public void canAddWithMultiThreads() throws InterruptedException {
-        // 10个线程并发
-        runConcurrently(100, this::add100DifferentObjects);
-        assertEquals(10000, concurrentHashSet.size(), "100个线程每个添加100个元素，结果集的大小是10000");
+        runConcurrently(10, this::add100DifferentNumbers);
+        assertEquals(1000, concurrentTreeSet.size(), "10个线程每个添加100个元素，结果集的大小是1000");
+
+        // 检查集合是否是有序的
+        assertSetIsOrdered();
     }
 
-    /**
-     * 添加100个新建的对象
-     */
-    private void add100DifferentObjects() {
+    private void add100DifferentNumbers() {
         for (int i = 0; i < 100; ++i) {
-            concurrentHashSet.add(new Object());
+            concurrentTreeSet.add(counter.incrementAndGet());
         }
     }
 
@@ -38,18 +42,22 @@ public class ConcurrentSetTest {
      * @param work 每个线程要执行的工作
      */
     private void runConcurrently(int threadNum, Runnable work) throws InterruptedException {
-        List<Thread> threads = new ArrayList<>();
-
         // 开启threadNum数量的线程，并发地执行工作
         for (int i = 0; i < threadNum; ++i) {
-            Thread thread = new Thread(work);
-            threads.add(thread);
-            thread.start();
+            new Thread(work).start();
         }
 
-        // 等待所有线程结束
-        for (Thread thread : threads) {
-            thread.join();
+        // 等待1s，等所有线程结束，如果时间太长，可能发生死循环
+        Thread.sleep(1000);
+    }
+
+    private void assertSetIsOrdered() {
+        List<Integer> list = concurrentTreeSet.asList();
+
+        for (int i = 0; i < list.size() - 1; i++) {
+            int currentElement = list.get(i);
+            int nextElement = list.get(i + 1);
+            assertTrue(currentElement < nextElement, "集合是从小到大排列的！当前元素：" + currentElement + "下一个元素：" + nextElement);
         }
     }
 }

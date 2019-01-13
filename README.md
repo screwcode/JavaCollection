@@ -22,7 +22,9 @@ ScrewCode的名字来源于“面试造火箭，入职拧螺丝”。与其他�
 - [按照多个字段进行排序](https://github.com/screwcode/JavaCollection/tree/SortByMultipleFields) `Easy` 
 - [修复Bug: 错误的compare实现](https://github.com/screwcode/JavaCollection/tree/FixCompareBug) `Medium` 
 - [修复Bug: 错误的Comparable实现](https://github.com/screwcode/JavaCollection/tree/FixComparableBug) `Easy` 
-- [TBD][修复Bug: 多线程下的死锁问题](https://github.com/screwcode/JavaCollection/tree/FixMultithreadDeadlock) `Hard` 
+- [修复Bug: 多线程环境下ArrayList的并发问题](https://github.com/screwcode/JavaCollection/tree/FixConcurrentListIssue) `Easy` 
+- [修复Bug: 多线程环境下HashSet的并发问题](https://github.com/screwcode/JavaCollection/tree/FixConcurrentHashSetIssue) `Easy` 
+- [修复Bug: 多线程环境下TreeSet的并发问题](https://github.com/screwcode/JavaCollection/tree/FixConcurrentTreeSetIssue) `Easy` 
 
 ## 如何开始
 

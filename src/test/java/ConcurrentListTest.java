@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -19,7 +20,8 @@ public class ConcurrentListTest {
         assertEquals(100, concurrentList.size(), "添加100个元素之后，结果集的大小是100");
     }
 
-    @Test
+    // 重复测试以保证正确性
+    @RepeatedTest(10)
     public void canAddWithMultiThreads() throws InterruptedException {
         // 10个线程并发
         runConcurrently(10, () -> manyIntegers.forEach(concurrentList::add));

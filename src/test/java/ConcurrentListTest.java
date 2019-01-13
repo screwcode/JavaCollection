@@ -23,9 +23,9 @@ public class ConcurrentListTest {
     // 重复测试以保证正确性
     @RepeatedTest(10)
     public void canAddWithMultiThreads() throws InterruptedException {
-        // 10个线程并发
-        runConcurrently(10, () -> manyIntegers.forEach(concurrentList::add));
-        assertEquals(1000, concurrentList.size(), "10个线程每个添加100个元素，结果集的大小是1000");
+        // 100个线程并发
+        runConcurrently(100, () -> manyIntegers.forEach(concurrentList::add));
+        assertEquals(10000, concurrentList.size(), "100个线程每个添加100个元素，结果集的大小是10000");
     }
 
     /**

@@ -24,8 +24,9 @@ public class IncrementalListTest {
     // 反复重复测试，以保证正确性
     @RepeatedTest(10)
     public void isIncrementalWithMultiThread() throws InterruptedException {
-        // 10个线程并发
-        runConcurrently(10, () -> Arrays.asList(1, 3, 2, 4, 6, 5, 1, 10, 12, 9).forEach(incrementalList::addElementOnlyWhenIncremental));
+        // 100个线程并发
+        runConcurrently(100,
+                () -> Arrays.asList(1, 3, 2, 4, 2, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16).forEach(incrementalList::addElementOnlyWhenIncremental));
 
         List<Integer> list = incrementalList.getList();
 
@@ -38,6 +39,7 @@ public class IncrementalListTest {
             );
         }
     }
+
     /**
      * 开启threadNum数量的线程，每个线程独立地完成work指定的工作。该方法会等待所有线程的工作结束。
      *

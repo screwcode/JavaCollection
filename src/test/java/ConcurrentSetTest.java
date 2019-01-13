@@ -1,29 +1,34 @@
+import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class ConcurrentListTest {
-    private ConcurrentList concurrentList = new ConcurrentList();
-
-    // 0,1,2,3,...,99
-    private List<Integer> manyIntegers = IntStream.range(0, 100).boxed().collect(Collectors.toList());
+public class ConcurrentSetTest {
+    private ConcurrentHashSet concurrentHashSet = new ConcurrentHashSet();
 
     @Test
     public void canAddWithSingleThread() {
-        manyIntegers.forEach(concurrentList::add);
-        assertEquals(100, concurrentList.size(), "添加100个元素之后，结果集的大小是100");
+        add100DifferentObjects();
+        assertEquals(100, concurrentHashSet.size(), "添加100个元素之后，结果集的大小是100");
     }
 
-    @Test
+    @RepeatedTest(10) // 重复10次以保证结果的正确性
     public void canAddWithMultiThreads() throws InterruptedException {
         // 10个线程并发
-        runConcurrently(10, () -> manyIntegers.forEach(concurrentList::add));
-        assertEquals(1000, concurrentList.size(), "10个线程每个添加100个元素，结果集的大小是1000");
+        runConcurrently(100, this::add100DifferentObjects);
+        assertEquals(10000, concurrentHashSet.size(), "100个线程每个添加100个元素，结果集的大小是10000");
+    }
+
+    /**
+     * 添加100个新建的对象
+     */
+    private void add100DifferentObjects() {
+        for (int i = 0; i < 100; ++i) {
+            concurrentHashSet.add(new Object());
+        }
     }
 
     /**

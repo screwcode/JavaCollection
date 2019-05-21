@@ -8,7 +8,7 @@ public class PersonTest {
     public void test() {
         assertEquals(new Person(1), new Person(1));
         assertNotEquals(new Person(1), new Person(2));
-        assertEquals(new Person(10000), new Person(10000));
+        assertNotEquals(new Person(10000), new Person(10000));
 
         assertNotEquals(new GoodPerson(1), new BadPerson(1));
     }

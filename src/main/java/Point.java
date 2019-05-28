@@ -44,18 +44,10 @@ public class Point {
             @Override
             public int compare(Point p1, Point p2) {
                 // 按照先x再y，从小到大的顺序排序
-                if (p1.x > p2.x) {
-                    return 1;
-                } else if (p1.x < p2.x) {
-                    return -1;
+                if (p1.x != p2.x) {
+                    return p1.x - p2.x;
                 } else {
-                    if (p1.y > p2.y) {
-                        return 1;
-                    } else if (p1.y < p2.y) {
-                        return -1;
-                    } else {
-                        return 0;
-                    }
+                    return p1.y - p2.y;
                 }
             }
         });

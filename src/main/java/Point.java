@@ -14,6 +14,14 @@ public class Point {
         this.y = y;
     }
 
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -40,17 +48,7 @@ public class Point {
 
     public static List<Point> sort(List<Point> list) {
         List<Point> ret = new ArrayList<>(list);
-        ret.sort(new Comparator<Point>() {
-            @Override
-            public int compare(Point p1, Point p2) {
-                // 按照先x再y，从小到大的顺序排序
-                if (p1.x != p2.x) {
-                    return p1.x - p2.x;
-                } else {
-                    return p1.y - p2.y;
-                }
-            }
-        });
+        ret.sort(Comparator.comparing(Point::getX).thenComparing(Point::getY));
         return ret;
     }
 }

@@ -1,13 +1,10 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 /**
  * 一个在多线程环境下也能安全的添加元素的TreeSet
  */
 public class ConcurrentTreeSet {
-    private Set<Integer> elements = new TreeSet<>();
+    private Set<Integer> elements = Collections.synchronizedSet( new TreeSet<>());
 
     public void add(Integer i) {
         elements.add(i);

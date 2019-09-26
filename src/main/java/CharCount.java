@@ -1,6 +1,7 @@
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class CharCount {
     /**
@@ -45,7 +46,9 @@ public class CharCount {
         Set<Character> myChars = chars();
         Set<Character> theirChars = anotherCharCount.chars();
 
-        theirChars.retainAll(myChars);
-        return theirChars.size();
+        Set<Character> collect = myChars.stream().filter(theirChars::contains).collect(Collectors.toSet());
+
+        // theirChars.retainAll(myChars);
+        return collect.size();
     }
 }

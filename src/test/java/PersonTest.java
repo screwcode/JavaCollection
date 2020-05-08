@@ -2,6 +2,7 @@ import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 import static org.junit.Assert.*;
@@ -31,9 +32,23 @@ public class PersonTest {
         public GoodPerson(String name) {
             super(name);
         }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            return super.equals(o);
+        }
     }
 
     private static class BadPerson extends Person {
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            return super.equals(o);
+        }
+
         public BadPerson(String name) {
             super(name);
         }

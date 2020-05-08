@@ -1,4 +1,11 @@
-// 修改Person的实现，使得CommonElementsInObjectListTest测试通过
+
+
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+
+import java.util.Objects;
+@EqualsAndHashCode
+@Getter
 public class Person {
     private final String name;
 

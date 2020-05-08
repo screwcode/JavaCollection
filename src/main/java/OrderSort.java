@@ -1,4 +1,6 @@
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class OrderSort {
     /**
@@ -8,6 +10,7 @@ public class OrderSort {
      * @return 排序后的订单列表
      */
     public static List<Order> sortByTimeDesc(List<Order> orders) {
+        return orders.stream().sorted(Comparator.comparing(Order :: getPayTime).reversed()).collect(Collectors.toList());
     }
 
     /**
@@ -17,5 +20,9 @@ public class OrderSort {
      * @return 排序后的订单列表
      */
     public static List<Order> sortByAmountTimeId(List<Order> orders) {
+        return orders.stream()
+                .sorted(Comparator.comparing(Order::getOrderAmount)
+                .thenComparing(Order::getPayTime).reversed()
+                .thenComparing(Order::getId)).collect(Collectors.toList());
     }
 }

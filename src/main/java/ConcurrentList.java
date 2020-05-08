@@ -9,7 +9,7 @@ import java.util.List;
 public class ConcurrentList {
     private List<Integer> elements = new ArrayList<>();
 
-    public void add(Integer i) {
+    public synchronized void add(Integer i) {
         elements.add(i);
     }
 

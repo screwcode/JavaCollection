@@ -40,15 +40,12 @@ public class Point {
 
     public static List<Point> sort(List<Point> list) {
         List<Point> ret = new ArrayList<>(list);
-        ret.sort(new Comparator<Point>() {
-            @Override
-            public int compare(Point p1, Point p2) {
-                // 按照先x再y，从小到大的顺序排序
-                if (p1.x != p2.x) {
-                    return Long.compare(p1.x,p2.x);
-                } else {
-                    return Long.compare(p1.y,p2.y);
-                }
+        ret.sort((p1, p2) -> {
+            // 按照先x再y，从小到大的顺序排序
+            if (p1.x != p2.x) {
+                return Long.compare(p1.x, p2.x);
+            } else {
+                return Long.compare(p1.y, p2.y);
             }
         });
         return ret;

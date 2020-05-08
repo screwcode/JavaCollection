@@ -16,6 +16,11 @@ public class CommonElementsInObjectListTest {
         Person lm = new Person("黎明");
         Person zxy2 = new Person("张学友");
 
+        System.out.println(zxy.getName());
+        System.out.println(zxy.hashCode() + "    " + zxy2.hashCode());
+
+        System.out.println(zxy.equals(zxy2));
+
         assertEquals("张学友 == 张学友", zxy, zxy);
         assertNotEquals("张学友 != 刘德华", zxy, ldh);
         assertEquals("张学友 == 另一个张学友", zxy, zxy2);

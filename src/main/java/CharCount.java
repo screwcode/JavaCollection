@@ -1,3 +1,4 @@
+import java.io.CharArrayWriter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -44,8 +45,11 @@ public class CharCount {
     public int howManyCharsInCommon(CharCount anotherCharCount) {
         Set<Character> myChars = chars();
         Set<Character> theirChars = anotherCharCount.chars();
+        int num = 0;
 
-        theirChars.retainAll(myChars);
-        return theirChars.size();
+        for(Character c: theirChars) {
+            if (myChars.contains(c)) num++;
+        }
+        return num;
     }
 }

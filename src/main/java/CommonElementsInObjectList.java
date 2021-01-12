@@ -7,4 +7,9 @@ public class CommonElementsInObjectList {
         setA.retainAll(setB);
         return setA;
     }
+    public static void main(String[] args) {
+        System.out.println(
+        commonElementsIn(Arrays.asList(new Person("a"),new Person("b"),new Person("c")),
+                Arrays.asList(new Person("b"),new Person("c"))));
+    }
 }

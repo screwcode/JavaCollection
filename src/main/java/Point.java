@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * 笛卡尔坐标系中的一个点
@@ -12,6 +13,14 @@ public class Point {
     public Point(int x, int y) {
         this.x = x;
         this.y = y;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
     }
 
     @Override
@@ -44,11 +53,9 @@ public class Point {
             @Override
             public int compare(Point p1, Point p2) {
                 // 按照先x再y，从小到大的顺序排序
-                if (p1.x != p2.x) {
-                    return p1.x - p2.x;
-                } else {
-                    return p1.y - p2.y;
-                }
+                return  Comparator.comparing(Point::getX)
+                        .thenComparing(Point::getY)
+                        .compare(p1,p2);
             }
         });
         return ret;

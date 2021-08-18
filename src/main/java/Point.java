@@ -45,9 +45,9 @@ public class Point {
             public int compare(Point p1, Point p2) {
                 // 按照先x再y，从小到大的顺序排序
                 if (p1.x != p2.x) {
-                    return p1.x - p2.x;
+                    return Comparator.comparingInt((Point point) -> point.x).compare(p1, p2);
                 } else {
-                    return p1.y - p2.y;
+                    return Comparator.comparingInt((Point point) -> point.y).compare(p1, p2);
                 }
             }
         });

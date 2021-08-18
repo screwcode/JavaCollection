@@ -1,3 +1,4 @@
+import java.util.Comparator;
 import java.util.Objects;
 
 public class User implements Comparable<User> {
@@ -49,6 +50,8 @@ public class User implements Comparable<User> {
      */
     @Override
     public int compareTo(User o) {
-        return name.compareTo(o.name);
+        return Comparator.comparing(User::getName)
+                .thenComparing(User::getId)
+                .compare(this, o);
     }
 }
